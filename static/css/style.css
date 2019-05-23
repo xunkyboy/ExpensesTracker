@@ -1,0 +1,16 @@
+.navbar{
+    background-color: green !important;
+    border:0px;
+    border-redius:0px;
+}
+
+.navbar-right>li>a{
+    color:white !important;
+}
+.exp-text{
+    margin-left: 40px !important;
+}
+
+.imageW{
+    height: 150px !important;
+}

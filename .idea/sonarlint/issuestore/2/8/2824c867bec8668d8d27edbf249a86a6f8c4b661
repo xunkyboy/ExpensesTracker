@@ -1,0 +1,6 @@
+
+upython:S1542o"WRename function "MyCurrentMonth" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ì¢­A8ÔƒŞ†ª-
+zpython:S1542r"VRename function "MyCurrentYear" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(Ÿ°¶ûÿÿÿÿ8ÔƒŞ†ª-
+Cpython:S125Š"Remove this commented out code.(ŸòÍúÿÿÿÿ8 ÏÙ“ª-
+€python:S1542"\Rename function "MyPreviousMonthYear" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(‡ÃÌúÿÿÿÿ8éËÈ“ª-
+wpython:S1542u"XRename function "MyPreviousMonth" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(Ø«ë8éËÈ“ª-

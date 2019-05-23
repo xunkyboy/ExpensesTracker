@@ -1,0 +1,51 @@
+{% extends 'base/master.html' %}
+{% load staticfiles %}
+
+{% block 'title' %}
+   Category
+{% endblock %}
+
+{% block 'content' %}
+    <div class="container">
+        <div class="col-md-6">
+           <div class="panel panel-primary">
+            <div class="panel-heading">
+                Add Category
+            </div>
+            <div class="panel-body">
+                <form method="post" action="#" enctype="multipart/form-data">
+                    {{ form }}
+                   {% csrf_token %}
+                    <br/>
+                    <button type="submit" class="btn-success">Save</button>
+                </form>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    All Category
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                        {% for c in cat %}
+
+                            <tr>
+                                <td>{{ c.title }}</td>
+                                <td>{{ c.date }}</td>
+                                <td>edit | del</td>
+                            {% csrf_token %}
+                            </tr>
+
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

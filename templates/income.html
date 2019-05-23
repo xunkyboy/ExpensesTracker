@@ -1,0 +1,87 @@
+{% extends 'base/master.html' %}
+{% load staticfiles %}
+
+{% block 'title' %}
+    Income
+{% endblock %}
+
+{% block 'content' %}
+    <div class="container">
+        <div class="col-md-6">
+           <div class="panel panel-primary">
+            <div class="panel-heading">
+                Add Income
+            </div>
+            <div class="panel-body">
+                <form method="post" action="#">
+                    {{ form }}
+                   {% csrf_token %}
+                    <br/>
+                    <button type="submit" class="btn-success">Save</button>
+                </form>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Income for this month
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Rupees</th>
+                        <th>Action</th>
+                        {% for a in income %}
+
+                            <tr>
+                                <td>{{ a.title }}</td>
+                                <td>{{ a.date }}</td>
+                                <td>{{ a.rupees }}</td>
+                                <td><a href="{% url 'income_edit' a.id %}">edit </a>|<a href="#" onclick="delete_('{% url 'income_delete' a.id %}')" >Del</a> </td>
+                            {% csrf_token %}
+                            </tr>
+                        {% endfor %}
+                         <tr>
+                                <td>Total</td>
+                                <td></td>
+                                <td>{{ total.rupees__sum }}</td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+         <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Income of previous month
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Rupees</th>
+                        <th>Action</th>
+                        {% for p in prevInc %}
+
+                            <tr>
+                                <td>{{ p.title }}</td>
+                                <td>{{ p.date }}</td>
+                                <td>{{ p.rupees }}</td>
+                                <td><a href="{% url 'income_edit' p.id %}">EDIT</a>| <a href="#" onclick="delete_('{% url 'income_delete' p.id %}')" >Del</a></td>
+                            {% csrf_token %}
+                            </tr>
+                        {% endfor %}
+                         <tr>
+                             <td>Total</td>
+                             <td></td>
+                             <td>{{ prevTotal.rupees__sum }}</td>
+                         </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
